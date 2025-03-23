@@ -10,8 +10,9 @@ app.use(express.urlencoded({ extended: false }));
 
 const port = process.env.PORT;
 
-app.use('/', todoRouter)
+app.use('/api', todoRouter)
 
 
-app.listen(port || 3001);
+app.listen(port || 3001, () => {
+  console.log(`Server running on port ${port}`)});
 
